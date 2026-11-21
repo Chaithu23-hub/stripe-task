@@ -1,0 +1,14 @@
+@api = http://localhost:5075
+
+GET {{api}}/api/products?sort=asc
+Accept: application/json
+
+###
+
+GET {{api}}/api/products/1
+Accept: application/json
+
+###
+
+GET {{api}}/api/orders
+Accept: application/json

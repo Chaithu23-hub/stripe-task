@@ -1,0 +1,14 @@
+<header class="site-header">
+  <div class="frame nav">
+    <a class="brand" routerLink="/products">Circuit<span> Supply</span></a>
+    <nav aria-label="Main navigation">
+      <a routerLink="/products" routerLinkActive="active">Products</a>
+      <a routerLink="/orders" routerLinkActive="active">Orders</a>
+      <a class="cart-link" routerLink="/cart" routerLinkActive="active">Cart ({{ cart.quantity() }})</a>
+    </nav>
+  </div>
+</header>
+<main class="frame"><router-outlet /></main>
+<div class="toast-region" role="status">
+  @if (notifications.text(); as message) { <div class="toast">{{ message }}</div> }
+</div>

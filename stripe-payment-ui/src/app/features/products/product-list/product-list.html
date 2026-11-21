@@ -1,0 +1,27 @@
+<section class="catalog-hero">
+  <h1>Stripe Payment Application</h1>
+  <p>Shop laptops, phones, and audio accessories.</p>
+</section>
+<section aria-label="Product catalog">
+  <div class="filters">
+    <label>Search products <input type="search" placeholder="Search by name" [(ngModel)]="searchText" (ngModelChange)="query.next($event)"></label>
+    <label>Category <select #categoryFilter (change)="category.next(categoryFilter.value)">
+      <option value="">All categories</option><option>Computers</option><option>Mobile</option><option>Audio</option>
+    </select></label>
+    <label>Sort by <select #priceSort (change)="sort.next(priceSort.value)">
+      <option value="">Featured</option><option value="asc">Price low to high</option><option value="desc">Price high to low</option>
+    </select></label>
+    <button class="secondary" type="button" [attr.aria-expanded]="visible()" (click)="visible.set(!visible())">{{ visible() ? 'Hide Products' : 'Show Products' }}</button>
+  </div>
+  @if (visible()) {
+    @if (loading()) { <p class="loading" role="status">Loading products…</p> }
+    @else if (error()) { <p role="alert">{{ error() }}</p><button (click)="reload()">Try again</button> }
+    @else {
+      <div class="product-grid">
+        @for (product of products(); track product.id) {
+          <app-product-card [product]="product" (added)="addToCart($event)" />
+        } @empty { <p>No products match your search.</p> }
+      </div>
+    }
+  }
+</section>

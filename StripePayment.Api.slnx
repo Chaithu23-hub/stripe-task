@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="StripePayment.Api.Tests/StripePayment.Api.Tests.csproj" />
+  <Project Path="StripePayment.Api/StripePayment.Api.csproj" />
+  <Project Path="StripePayment.Application/StripePayment.Application.csproj" />
+  <Project Path="StripePayment.Domain/StripePayment.Domain.csproj" />
+  <Project Path="StripePayment.Infrastructure/StripePayment.Infrastructure.csproj" />
+</Solution>

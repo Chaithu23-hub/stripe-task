@@ -1,0 +1,9 @@
+bin/
+obj/
+.vs/
+*.user
+appsettings.Local.json
+stripe-payment-ui/node_modules/
+stripe-payment-ui/dist/
+stripe-payment-ui/.angular/
+TestResults/
